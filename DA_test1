@@ -1,0 +1,15 @@
+def decode_message(c:/DA_test1.txt):
+    decoded_message = ""
+    with open(c:/DA_test1.txt, 'r') as file:
+        lines = file.readlines()
+        for i in range(0, len(lines), 2):
+            words = lines[i].split()
+            for j in range(len(words)):
+                if (j + 1) % (2**i // 2) == 0:
+                    decoded_message += words[j]
+    return decoded_message.strip()
+
+# Example usage:
+file_path = "c:/DA_test1.txt"  # Replace with the path to your encoded message file
+decoded_message = decode_message(file_path)
+print("Decoded Message:", decoded_message)
